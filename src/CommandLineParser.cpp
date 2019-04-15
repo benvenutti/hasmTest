@@ -9,7 +9,7 @@
 namespace Hasm
 {
 
-boost::optional<Config> CommandLineParser::parse( int argc, char const* const* argv )
+std::optional<Config> CommandLineParser::parse( int argc, char const* const* argv )
 {
     Config cfg;
     bool   showVersion{ false };
@@ -25,26 +25,26 @@ boost::optional<Config> CommandLineParser::parse( int argc, char const* const* a
     if ( !result )
     {
         std::cerr << "Error in command line: " << result.errorMessage() << std::endl;
-        return boost::none;
+        return std::nullopt;
     }
 
     if ( showHelp )
     {
         std::cout << Version::string << '\n';
         std::cout << cli << std::endl;
-        return boost::none;
+        return std::nullopt;
     }
 
     if ( showVersion )
     {
         std::cout << Version::string << std::endl;
-        return boost::none;
+        return std::nullopt;
     }
 
     if ( cfg.source.empty() )
     {
         std::cerr << "hasm: no source file" << std::endl;
-        return boost::none;
+        return std::nullopt;
     }
 
     return cfg;

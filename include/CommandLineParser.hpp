@@ -2,14 +2,14 @@
 
 #include "Config.hpp"
 
-#include <boost/optional.hpp>
+#include <optional>
 
 namespace Hasm
 {
 namespace CommandLineParser
 {
 
-boost::optional<Config> parse( int argc, char const* const* argv );
+std::optional<Config> parse( int argc, char const* const* argv );
 
 } // namespace CommandLineParser
 } // namespace Hasm

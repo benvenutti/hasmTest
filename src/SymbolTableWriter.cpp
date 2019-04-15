@@ -14,7 +14,7 @@ SymbolTableWriter::SymbolTableWriter( const SymbolTable& symbolTable )
     const auto symbols = symbolTable.getSymbols();
     for ( const auto& s : symbols )
     {
-        symbolMap.emplace( symbolTable.getAddress( s ).get(), s );
+        symbolMap.emplace( symbolTable.getAddress( s ).value(), s );
     }
 }
 

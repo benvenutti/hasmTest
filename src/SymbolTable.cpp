@@ -20,11 +20,11 @@ bool SymbolTable::contains( const std::string& symbol ) const
     return m_table.find( symbol ) != m_table.end();
 }
 
-boost::optional<Hack::word> SymbolTable::getAddress( const std::string& symbol ) const
+std::optional<Hack::word> SymbolTable::getAddress( const std::string& symbol ) const
 {
     const auto it = m_table.find( symbol );
 
-    return it != m_table.end() ? boost::make_optional( it->second ) : boost::none;
+    return it != m_table.end() ? std::make_optional( it->second ) : std::nullopt;
 }
 
 std::vector<std::string> SymbolTable::getSymbols() const

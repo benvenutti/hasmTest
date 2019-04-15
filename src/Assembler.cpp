@@ -117,7 +117,7 @@ Hack::word Assembler::computeValue( const std::string& symbol )
     }
     else if ( m_symbolTable.contains( symbol ) )
     {
-        value = m_symbolTable.getAddress( symbol ).get();
+        value = m_symbolTable.getAddress( symbol ).value();
     }
     else
     {

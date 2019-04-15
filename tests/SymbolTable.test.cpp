@@ -30,10 +30,10 @@ SCENARIO_METHOD( FixtureSymbolTable, "contains symbol", "[SymbolTable]" )
 
 SCENARIO_METHOD( FixtureSymbolTable, "symbol refers address", "[SymbolTable]" )
 {
-    REQUIRE( symbolTable.getAddress( "s1" ).get() == 0x1010 );
-    REQUIRE( symbolTable.getAddress( "s2" ).get() == 0x2020 );
-    REQUIRE( symbolTable.getAddress( "s3" ).get() == 0x3030 );
-    REQUIRE_FALSE( symbolTable.getAddress( "s4" ).is_initialized() );
+    REQUIRE( symbolTable.getAddress( "s1" ).value() == 0x1010 );
+    REQUIRE( symbolTable.getAddress( "s2" ).value() == 0x2020 );
+    REQUIRE( symbolTable.getAddress( "s3" ).value() == 0x3030 );
+    REQUIRE_FALSE( symbolTable.getAddress( "s4" ).has_value() );
 }
 
 SCENARIO_METHOD( FixtureSymbolTable, "all symbols", "[SymbolTable]" )
