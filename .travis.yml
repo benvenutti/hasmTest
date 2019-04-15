@@ -8,15 +8,15 @@ matrix:
 
     - os: linux
       addons: { apt: {
-        packages: [g++-6, libboost1.55-all-dev],
+        packages: [g++-7, libboost1.55-all-dev],
         sources: [ubuntu-toolchain-r-test, boost-latest] } }
-      env: MATRIX_EVAL="CC=gcc-6 && CXX=g++-6" BUILD_TYPE=Release
+      env: MATRIX_EVAL="CC=gcc-7 && CXX=g++-7" BUILD_TYPE=Release
 
     - os: linux
       addons: { apt: {
-        packages: [g++-6, libboost1.55-all-dev, lcov],
+        packages: [g++-7, libboost1.55-all-dev, lcov],
         sources: [ubuntu-toolchain-r-test, boost-latest] } }
-      env: MATRIX_EVAL="CC=gcc-6 && CXX=g++-6" BUILD_TYPE=Coverage GCOV=gcov-6
+      env: MATRIX_EVAL="CC=gcc-7 && CXX=g++-7" BUILD_TYPE=Coverage GCOV=gcov-7
 
     - os: linux
       addons: { apt: {
